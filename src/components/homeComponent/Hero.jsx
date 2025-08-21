@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 
-import 'react-image-lightbox/style.css';
-import Lightbox from 'react-image-lightbox';
-
 const cards = [
   {
     title: 'Nepal',
@@ -104,21 +101,51 @@ const Hero = () => {
       </div>
 
       {/* Lightbox */}
-      {isOpen && (
-        <Lightbox
-          mainSrc={cards[photoIndex].img}
-          nextSrc={cards[(photoIndex + 1) % cards.length].img}
-          prevSrc={cards[(photoIndex + cards.length - 1) % cards.length].img}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
+     {/* Custom Lightbox Modal */}
+{isOpen && (
+  <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4">
+    <button
+      onClick={() => setIsOpen(false)}
+      className="absolute top-5 right-5 text-white text-3xl font-bold z-50"
+    >
+      &times;
+    </button>
+
+    <div className="relative max-w-[90%] max-h-[90%] flex flex-col items-center justify-center">
+      <img
+        src={cards[photoIndex].img}
+        alt={cards[photoIndex].title}
+        className="max-h-[80vh] rounded-lg shadow-lg transition-transform duration-300"
+      />
+      <p className="text-white text-center mt-4 text-lg font-semibold">
+        {cards[photoIndex].title}
+      </p>
+
+      {/* Navigation */}
+      <div className="absolute inset-y-0 left-0 flex items-center">
+        <button
+          onClick={() =>
             setPhotoIndex((photoIndex + cards.length - 1) % cards.length)
           }
-          onMoveNextRequest={() =>
+          className="text-white text-3xl px-4 hover:scale-110 transition"
+        >
+          &#10094;
+        </button>
+      </div>
+      <div className="absolute inset-y-0 right-0 flex items-center">
+        <button
+          onClick={() =>
             setPhotoIndex((photoIndex + 1) % cards.length)
           }
-          imageTitle={cards[photoIndex].title}
-        />
-      )}
+          className="text-white text-3xl px-4 hover:scale-110 transition"
+        >
+          &#10095;
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
 </section>
 
   );
