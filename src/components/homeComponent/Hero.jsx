@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
+import backgroundVideo from '../../assets/videos/hero.mp4';
 
 const cards = [
   {
@@ -51,7 +52,7 @@ const Hero = () => {
         muted
         playsInline
       >
-        <source src={"src/assets/videos/hero.mp4"} type="video/mp4" />
+        <source src={ backgroundVideo } type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

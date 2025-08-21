@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/logo1.jpg';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ const NavBar = () => {
 
           {/* Logo */}
           <NavLink to="/" onClick={() => setOpen(false)} className="flex-shrink-0">
-            <img src="src/assets/images/logo1.jpg" alt="TripToHoneymoon Logo" className="h-8" />
+            <img src={ logo } alt="TripToHoneymoon Logo" className="h-8" />
           </NavLink>
 
           {/* Desktop Links */}
