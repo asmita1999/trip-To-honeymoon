@@ -1,6 +1,4 @@
 
-// src/components/Footer.jsx
-
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
@@ -33,7 +31,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-white">
-            <li><Link to="/faq">FAQs</Link></li>
+            <li><Link to="/FAQs">FAQs</Link></li>
             <li><Link to="/aboutUs">About Us</Link></li>
             <li><Link to="/contactUs">Contact</Link></li>
           </ul>
