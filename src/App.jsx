@@ -1,9 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
 
-=======
->>>>>>> e04c729 (Create TermsofUse page)
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -19,6 +16,8 @@ import Banner from './components/Banner';
 import BestResortforHoneymoon from './pages/BestResortforHoneymoon';
 import BlogDetail from './pages/BlogDetail';
 import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import FAQs from './components/FAQs';
 
 
 const App = () => {
@@ -39,9 +38,10 @@ const App = () => {
         <Route path='/Banner' element={<Banner/>}/>
         <Route path='/Best-Resort-for-Honeymoon' element={<BestResortforHoneymoon/>}/>
        
-        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path='/blog/:id' element={<BlogDetail />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='Terms-to-use' element={<TermsAndConditions />} />
-        
+        <Route path='FAQs' element={<FAQs />} />
 
         {/* Add more routes here as needed */}
       </Routes>

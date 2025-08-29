@@ -2,6 +2,7 @@ import React from 'react'
 import ContactHeroSection from '../components/contact/ContactHeroSection'
 import ContactForm from '../forms/ContactForm'
 import ContactInfo from '../components/contact/ContactInfo'
+import FAQs from '../components/FAQs'
 
 
 function ContactUs() {
@@ -20,6 +21,7 @@ function ContactUs() {
                 </div>
             </div>
         </section>
+        <FAQs />
     </div>
   )
 }
